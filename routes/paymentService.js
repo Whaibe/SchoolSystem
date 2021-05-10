@@ -7,18 +7,18 @@ const registerController = require("../controllers/registerController");
 const groupController = require("../controllers/groupController");
 const studentController = require("../controllers/studentController");
 
-app.get("/", (request, response) => {
+router.get("/", (request, response) => {
   response.render("../views/checkout.ejs");
 });
 
-app.get("/success", (request, response) => {
+router.get("/success", (request, response) => {
   response.render("../views/success.ejs");
 });
-app.get("/cancel", (request, response) => {
+router.get("/cancel", (request, response) => {
   response.render("../views/cancel.ejs");
 });
 
-app.post("/create-checkout-session", async (req, res) => {
+router.post("/create-checkout-session", async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
     line_items: [
