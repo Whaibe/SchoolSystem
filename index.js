@@ -6,6 +6,7 @@ const registerRouter = require("./routes/register");
 const adminRouter = require("./routes/admin");
 const studentRouter = require("./routes/student");
 const paymentRouter = require("./routes/paymentService");
+const paymentController = require("./controllers/paymentController");
 const stripe = require("stripe")(
   "sk_test_51IpRGeErZiQYNN7iqOTsDAO15INLxcl8HnfhbuvoRhuU2nIKIBKVAmOInq6GQUiFnvt9r6O3ixvozEoch5TnM38o00av78NToI"
 );
@@ -65,16 +66,17 @@ app.post("/create-checkout-session", async (req, res) => {
       quantity: 1,
     };
     items.push(item);
+    paymentController.setItems(items);
   }
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
     line_items: items,
     mode: "payment",
-    success_url: `https://primaryschoolsystem.herokuapp.com/api/payment/success`,
-    cancel_url: `https://primaryschoolsystem.herokuapp.com/api/payment/cancel`,
+    success_url: `http://localhost:3000/api/payment/success`,
+    cancel_url: `http://localhost:3000/api/payment/cancel`,
   });
-  res.json({ id: session.id });
+  res.json({ id: session.id, items: items });
 });
 
 const port = process.env.PORT || 3000;

@@ -6,6 +6,7 @@ const loginController = require("../controllers/loginController");
 const registerController = require("../controllers/registerController");
 const groupController = require("../controllers/groupController");
 const studentController = require("../controllers/studentController");
+const paymentController = require("../controllers/paymentController");
 
 router.get("/", (request, response) => {
   response.render("../views/checkout.ejs", {
@@ -20,5 +21,7 @@ router.get("/success", (request, response) => {
 router.get("/cancel", (request, response) => {
   response.render("../views/cancel.ejs");
 });
+
+router.post("/updatePayments/:username", paymentController.updatePayments);
 
 module.exports = router;
