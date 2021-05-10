@@ -2,7 +2,7 @@ getPayments();
 select();
 async function getPayments() {
   const username = sessionStorage.getItem("username");
-  const data = await fetch(localRoute + "/api/student/getPayments/" + username);
+  const data = await fetch(route + "/api/student/getPayments/" + username);
   const jsonData = await data.json();
   console.log(jsonData);
   const flex = document.getElementsByClassName("basic-flex");

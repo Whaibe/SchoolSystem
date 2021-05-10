@@ -1,18 +1,18 @@
 function goRegister() {
-  window.location.replace(localRoute + "/api/admin/register/show#");
+  window.location.replace(route + "/api/admin/register/show#");
 }
 
 function goGroups() {
-  window.location.replace(localRoute + "/api/admin/register/group");
+  window.location.replace(route + "/api/admin/register/group");
 }
 
 function goMain() {
-  window.location.replace(localRoute + "/api/admin/");
+  window.location.replace(route + "/api/admin/");
 }
 
 function goPayments() {
-  window.location.replace(localRoute + "/api/student/payments");
+  window.location.replace(route + "/api/student/payments");
 }
 function goInformation() {
-  window.location.replace(localRoute + "/api/student/information");
+  window.location.replace(route + "/api/student/information");
 }

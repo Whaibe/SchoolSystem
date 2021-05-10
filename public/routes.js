@@ -1,2 +1,2 @@
-const herokuRoute = "https://primaryschoolsystem.herokuapp.com";
-const localRoute = "http://localhost:3000";
+const route = "https://primaryschoolsystem.herokuapp.com";
+//const route = "http://localhost:3000";

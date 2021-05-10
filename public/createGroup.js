@@ -31,7 +31,7 @@ $(document).on("click", ".table tr", function () {
 
 async function getStudents(group, tbl1, tbl2) {
   try {
-    const data = await fetch(localRoute + "/api/admin/register/studentData");
+    const data = await fetch(route + "/api/admin/register/studentData");
 
     const students = await data.json();
     console.log(students);
@@ -85,10 +85,7 @@ async function sendGroups() {
     body: JSON.stringify(data),
   };
   try {
-    const response = await fetch(
-      localRoute + "/api/admin/register/group",
-      options
-    );
+    const response = await fetch(route + "/api/admin/register/group", options);
     const text = await response.json();
     if (text.status == 200) {
       Swal.fire({
