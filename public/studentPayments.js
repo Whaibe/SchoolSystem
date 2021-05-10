@@ -3,7 +3,8 @@ getPayments();
 async function getPayments() {
   const username = sessionStorage.getItem("username");
   const data = await fetch(
-    "http://localhost:3000/api/student/getPayments/" + username
+    "https://primaryschoolsystem.herokuapp.com/api/student/getPayments/" +
+      username
   );
   const jsonData = await data.json();
   console.log(jsonData);

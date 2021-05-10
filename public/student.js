@@ -7,7 +7,8 @@ async function getInfo(group, tbl1, tbl2) {
 
   try {
     const data = await fetch(
-      "http://localhost:3000/api/student/getInfo/" + username
+      "https://primaryschoolsystem.herokuapp.com/api/student/getInfo/" +
+        username
     );
 
     const student = await data.json();
