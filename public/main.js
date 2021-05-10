@@ -9,13 +9,19 @@
 // }
 
 function goRegister() {
-  window.location.replace("http://localhost:3000/api/admin/register/show#");
+  window.location.replace(
+    "https://primaryschoolsystem.herokuapp.com/api/admin/register/show#"
+  );
 }
 
 function goGroups() {
-  window.location.replace("http://localhost:3000/api/admin/register/group");
+  window.location.replace(
+    "https://primaryschoolsystem.herokuapp.com/api/admin/register/group"
+  );
 }
 
 function goMain() {
-  window.location.replace("http://localhost:3000/api/admin/");
+  window.location.replace(
+    "https://primaryschoolsystem.herokuapp.com/api/admin/"
+  );
 }
