@@ -7,14 +7,14 @@ const registerController = require("../controllers/registerController");
 const groupController = require("../controllers/groupController");
 const studentController = require("../controllers/studentController");
 
-app.get("/", (req, res) => {
+app.get("/", (request, response) => {
   response.render("../views/checkout.html");
 });
 
-app.get("/success", (req, res) => {
+app.get("/success", (request, response) => {
   response.render("../views/success.html");
 });
-app.get("/cancel", (req, res) => {
+app.get("/cancel", (request, response) => {
   response.render("../views/cancel.html");
 });
 
