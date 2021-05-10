@@ -10,6 +10,9 @@ const studentController = require("../controllers/studentController");
 router.get("/payments", (request, response) => {
   response.render("../views/studentPayments.ejs");
 });
+router.get("/information", (request, response) => {
+  response.render("../views/studentMains.ejs");
+});
 
 router.get("/getInfo/:username", studentController.getStudentByName);
 router.get("/getPayments/:username", studentController.getPayments);

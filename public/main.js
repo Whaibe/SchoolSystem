@@ -1,13 +1,3 @@
-// async function goRegister() {
-//   const token = sessionStorage.getItem("token");
-//   const request = await fetch("http://localhost:3000/api/admin/register/show", {
-//     method: "POST",
-//     headers: {
-//       Authorization: token.token,
-//     },
-//   });
-// }
-
 function goRegister() {
   window.location.replace(
     "https://primaryschoolsystem.herokuapp.com/api/admin/register/show#"
@@ -23,5 +13,16 @@ function goGroups() {
 function goMain() {
   window.location.replace(
     "https://primaryschoolsystem.herokuapp.com/api/admin/"
+  );
+}
+
+function goPayments() {
+  window.location.replace(
+    "https://primaryschoolsystem.herokuapp.com/api/student/payments"
+  );
+}
+function goInformation() {
+  window.location.replace(
+    "https://primaryschoolsystem.herokuapp.com/api/student/information"
   );
 }
