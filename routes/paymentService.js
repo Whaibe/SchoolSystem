@@ -35,8 +35,8 @@ app.post("/create-checkout-session", async (req, res) => {
       },
     ],
     mode: "payment",
-    success_url: `http://localhost:4242https://primaryschoolsystem.herokuapp.com/api/payment/success`,
-    cancel_url: `http://localhost:4242https://primaryschoolsystem.herokuapp.com/api/payment/cancel`,
+    success_url: `https://primaryschoolsystem.herokuapp.com/api/payment/success`,
+    cancel_url: `https://primaryschoolsystem.herokuapp.com/api/payment/cancel`,
   });
   res.json({ id: session.id });
 });

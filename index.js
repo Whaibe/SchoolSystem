@@ -47,8 +47,7 @@ db.once("open", () => {
   console.log("Connection established");
 });
 
-const YOUR_DOMAIN =
-  "http://localhost:4242https://primaryschoolsystem.herokuapp.com/";
+const YOUR_DOMAIN = "https://primaryschoolsystem.herokuapp.com/";
 
 const port = process.env.PORT || 3000;
 //Restful api
