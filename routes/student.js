@@ -11,7 +11,7 @@ router.get("/payments", (request, response) => {
   response.render("../views/studentPayments.ejs");
 });
 router.get("/information", (request, response) => {
-  response.render("../views/studentMains.ejs");
+  response.render("../views/studentMain.ejs");
 });
 
 router.get("/getInfo/:username", studentController.getStudentByName);
