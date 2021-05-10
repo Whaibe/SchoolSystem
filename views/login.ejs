@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/style/loginStyle.css" />
+
+    <title>Login</title>
+  </head>
+
+  <body class="bdy">
+    <main>
+      <script src="https://use.typekit.net/rjb4unc.js"></script>
+      <script>
+        try {
+          Typekit.load({ async: true });
+        } catch (e) {}
+      </script>
+      <section class="basic-grid">
+        <div class="container">
+          <div class="logotop">Login</div>
+          <div class="login-item">
+            <form action="" method="post" class="form form-login" id="form">
+              <div class="form-field">
+                <label class="user" for="login-username">
+                  <span class="hidden">Username</span>
+                </label>
+                <input
+                  name="username"
+                  id="login-username"
+                  type="text"
+                  class="form-input"
+                  placeholder="Username"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label class="lock" for="login-password">
+                  <span class="hidden">Password</span>
+                </label>
+
+                <input
+                  name="password"
+                  id="login-password"
+                  type="password"
+                  class="form-input"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <div>
+                <button id="botonSubmit" onclick="getToken()">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      function sendAlert() {
+        try {
+          var error = "<%= error %>";
+          if (error) {
+            error = parseInt(error);
+            console.log(error);
+            alert(error);
+          }
+        } catch (error) {
+          console.log("Not error");
+        }
+      }
+    </script>
+    <script defer src="/public/login.js"></script>
+  </body>
+</html>

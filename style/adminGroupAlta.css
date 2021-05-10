@@ -1,0 +1,68 @@
+:root {
+  font-size: 16px;
+  font-family: "Open Sans";
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+}
+
+#groupNum {
+  color: var(--text-primary);
+  font-size: 30px;
+  font-family: "lato", sans-serif;
+  padding: 10px;
+  position: relative;
+}
+
+.title {
+  padding: 10px;
+  position: relative;
+  display: inline-block;
+  left: 5vw;
+  top: 2.5vh;
+  background-color: var(--bg-secondary);
+}
+
+#inputGroup {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.groups {
+  background: rgba(58, 63, 68, 0.5);
+  border-radius: 5px;
+  box-shadow: 0 1.5px 0 0 rgba(0, 0, 0, 0.1);
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  color: #eee;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.table {
+  font-size: 23px;
+  text-align: center;
+  color: var(--text-primary);
+}
+.table2 {
+  font-size: 23px;
+  text-align: center;
+  color: var(--text-primary);
+  padding: 5px;
+  cursor: pointer;
+}
+td {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: rgb(47, 70, 119);
+  color: #fff;
+  padding: 5px;
+  cursor: pointer;
+}

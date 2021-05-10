@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/style/main.css" />
+    <link rel="stylesheet" href="/style/studentMain.css" />
+
+    <title>Information</title>
+  </head>
+  <%-include("navbarStudent.ejs")%>
+
+  <body id="bdy">
+    <main>
+      <div class="infoContainer">
+        <div id="photoHolder">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="64"
+            height="64"
+            fill="currentColor"
+            class="bi bi-person-circle"
+            viewBox="0 0 16 16"
+          >
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            <path
+              fill-rule="evenodd"
+              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+            />
+          </svg>
+        </div>
+        <div class="studentInfo">
+          <tag>Name:</tag>
+          <tag class="infoHolder" id="nameHolder"></tag>
+        </div>
+        <div class="studentInfo">
+          <tag>Last Name:</tag>
+          <tag class="infoHolder" id="lastNameHolder"></tag>
+        </div>
+        <div class="studentInfo">
+          <tag>Group:</tag>
+          <tag class="infoHolder" id="groupHolder"></tag>
+        </div>
+        <div class="studentInfo">
+          <tag>Semester:</tag>
+          <tag class="infoHolder" id="semesterHolder"></tag>
+        </div>
+      </div>
+      <div class="backgroundPanel">
+        <h1 class="title">Classes</h1>
+        <div class="basic-grid"></div>
+      </div>
+    </main>
+    <script defer src="/public/createTables.js"></script>
+    <script defer src="/public/student.js"></script>
+  </body>
+</html>
