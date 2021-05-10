@@ -30,3 +30,28 @@
   font-size: 20px;
   font-weight: bold;
 }
+
+#checkout-button {
+  height: 36px;
+  background: #556cd6;
+  color: white;
+  width: 5rem;
+  font-size: 14px;
+  border: 0;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.6;
+  border-radius: 0 0 6px 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+  position: relative;
+  left: 90%;
+  top: 60vh;
+}
+#checkout-button:hover {
+  opacity: 0.8;
+}
+
+.selected {
+  background-color: blue;
+}

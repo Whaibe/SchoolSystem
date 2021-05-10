@@ -8,7 +8,10 @@ const groupController = require("../controllers/groupController");
 const studentController = require("../controllers/studentController");
 
 router.get("/", (request, response) => {
-  response.render("../views/checkout.ejs");
+  response.render("../views/checkout.ejs", {
+    inscripcion: 25000,
+    colegiatura: 9000,
+  });
 });
 
 router.get("/success", (request, response) => {
@@ -16,29 +19,6 @@ router.get("/success", (request, response) => {
 });
 router.get("/cancel", (request, response) => {
   response.render("../views/cancel.ejs");
-});
-
-router.post("/create-checkout-session", async (req, res) => {
-  const session = await stripe.checkout.sessions.create({
-    payment_method_types: ["card"],
-    line_items: [
-      {
-        price_data: {
-          currency: "usd",
-          product_data: {
-            name: "Stubborn Attachments",
-            images: ["https://i.imgur.com/EHyR2nP.png"],
-          },
-          unit_amount: 2000,
-        },
-        quantity: 1,
-      },
-    ],
-    mode: "payment",
-    success_url: `https://primaryschoolsystem.herokuapp.com/api/payment/success`,
-    cancel_url: `https://primaryschoolsystem.herokuapp.com/api/payment/cancel`,
-  });
-  res.json({ id: session.id });
 });
 
 module.exports = router;

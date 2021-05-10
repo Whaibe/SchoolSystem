@@ -1,28 +1,18 @@
 function goRegister() {
-  window.location.replace(
-    "https://primaryschoolsystem.herokuapp.com/api/admin/register/show#"
-  );
+  window.location.replace(localRoute + "/api/admin/register/show#");
 }
 
 function goGroups() {
-  window.location.replace(
-    "https://primaryschoolsystem.herokuapp.com/api/admin/register/group"
-  );
+  window.location.replace(localRoute + "/api/admin/register/group");
 }
 
 function goMain() {
-  window.location.replace(
-    "https://primaryschoolsystem.herokuapp.com/api/admin/"
-  );
+  window.location.replace(localRoute + "/api/admin/");
 }
 
 function goPayments() {
-  window.location.replace(
-    "https://primaryschoolsystem.herokuapp.com/api/student/payments"
-  );
+  window.location.replace(localRoute + "/api/student/payments");
 }
 function goInformation() {
-  window.location.replace(
-    "https://primaryschoolsystem.herokuapp.com/api/student/information"
-  );
+  window.location.replace(localRoute + "/api/student/information");
 }

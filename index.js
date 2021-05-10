@@ -50,21 +50,26 @@ db.once("open", () => {
 const YOUR_DOMAIN = "https://primaryschoolsystem.herokuapp.com/";
 
 app.post("/create-checkout-session", async (req, res) => {
+  const items = [];
+  for (let i = 0; i < req.body.length; i++) {
+    var name = req.body[i].name;
+    var price = req.body[i].value * 100;
+    var item = {
+      price_data: {
+        currency: "mxn",
+        product_data: {
+          name: name,
+        },
+        unit_amount: price,
+      },
+      quantity: 1,
+    };
+    items.push(item);
+  }
+
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
-    line_items: [
-      {
-        price_data: {
-          currency: "usd",
-          product_data: {
-            name: "Stubborn Attachments",
-            images: ["https://i.imgur.com/EHyR2nP.png"],
-          },
-          unit_amount: 2000,
-        },
-        quantity: 1,
-      },
-    ],
+    line_items: items,
     mode: "payment",
     success_url: `https://primaryschoolsystem.herokuapp.com/api/payment/success`,
     cancel_url: `https://primaryschoolsystem.herokuapp.com/api/payment/cancel`,

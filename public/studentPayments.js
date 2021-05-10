@@ -1,11 +1,8 @@
 getPayments();
-
+select();
 async function getPayments() {
   const username = sessionStorage.getItem("username");
-  const data = await fetch(
-    "https://primaryschoolsystem.herokuapp.com/api/student/getPayments/" +
-      username
-  );
+  const data = await fetch(localRoute + "/api/student/getPayments/" + username);
   const jsonData = await data.json();
   console.log(jsonData);
   const flex = document.getElementsByClassName("basic-flex");
@@ -32,7 +29,7 @@ async function getPayments() {
     statusHolder.id = "statusHolder";
 
     conceptHolder.textContent = jsonData.payments[i].concept;
-    valueHolder.textContent = "$" + jsonData.payments[i].value;
+    valueHolder.textContent = jsonData.payments[i].value;
     date.textContent = jsonData.payments[i].date;
     dueDate.textContent = "DueDate:";
     status.textContent = "Status:";
@@ -46,4 +43,25 @@ async function getPayments() {
     paymentContainer.appendChild(status);
     paymentContainer.appendChild(statusHolder);
   }
+  select();
+}
+
+function select() {
+  var x = document.getElementsByClassName("paymentContainer");
+  for (var i = 0; i < x.length; i++) {
+    x[i].addEventListener(
+      "click",
+      function () {
+        if (this.className == "paymentContainer") {
+          this.classList.add("selected");
+        } else {
+          this.classList.remove("selected");
+        }
+      },
+      false
+    );
+  }
+
+  //Se necesita primero seleccionar uno de los divs, despues de ESA div recopilar la informacion
+  //Despues probar dentro del OTRO archivo para ver si si la manda al servidor.
 }

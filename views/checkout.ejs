@@ -6,6 +6,7 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
     <script src="https://js.stripe.com/v3/"></script>
   </head>
+
   <body>
     <section>
       <div class="product">
@@ -14,16 +15,20 @@
           alt="The cover of Stubborn Attachments"
         />
         <div class="description">
-          <h3>Stubborn Attachments</h3>
-          <h5>$20.00</h5>
+          <h3></h3>
+          <h5><%= colegiatura %></h5>
         </div>
       </div>
       <button type="button" id="checkout-button">Checkout</button>
     </section>
   </body>
+  <script defer src="/public/routes.js"></script>
+
   <script type="text/javascript">
     // Create an instance of the Stripe object with your publishable API key
-    var stripe = Stripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
+    var stripe = Stripe(
+      "pk_test_51IpRGeErZiQYNN7iCfCPhAZj3lDcOUfBPNiT63KgmL7Dy6TbgQaSIoOUYMhYxYFldtGslcnRdpHtsBiUbsIRrQKt0041ryQ6ZI"
+    );
     var checkoutButton = document.getElementById("checkout-button");
 
     checkoutButton.addEventListener("click", function () {

@@ -31,9 +31,7 @@ $(document).on("click", ".table tr", function () {
 
 async function getStudents(group, tbl1, tbl2) {
   try {
-    const data = await fetch(
-      "https://primaryschoolsystem.herokuapp.com/api/admin/register/studentData"
-    );
+    const data = await fetch(localRoute + "/api/admin/register/studentData");
 
     const students = await data.json();
     console.log(students);
@@ -88,7 +86,7 @@ async function sendGroups() {
   };
   try {
     const response = await fetch(
-      "https://primaryschoolsystem.herokuapp.com/api/admin/register/group",
+      localRoute + "/api/admin/register/group",
       options
     );
     const text = await response.json();

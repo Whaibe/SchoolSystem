@@ -6,10 +6,7 @@ async function getInfo(group, tbl1, tbl2) {
   const username = sessionStorage.getItem("username");
 
   try {
-    const data = await fetch(
-      "https://primaryschoolsystem.herokuapp.com/api/student/getInfo/" +
-        username
-    );
+    const data = await fetch(localRoute + "/api/student/getInfo/" + username);
 
     const student = await data.json();
     console.log(student);

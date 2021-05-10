@@ -4,9 +4,7 @@ getGroups(grid);
 
 async function getGroups(grid, tbl1, tbl2) {
   try {
-    const data = await fetch(
-      "https://primaryschoolsystem.herokuapp.com/api/admin/register/getGroups"
-    );
+    const data = await fetch(localRoute + "/api/admin/register/getGroups");
 
     const Jsondata = await data.json();
     console.log(Jsondata);
