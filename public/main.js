@@ -16,3 +16,7 @@ function goPayments() {
 function goInformation() {
   window.location.replace(route + "/api/student/information");
 }
+
+function redirect() {
+  window.location.replace(route + "/api/student/payments");
+}

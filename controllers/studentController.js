@@ -106,9 +106,69 @@ async function getPayments(req, res, next) {
   }
 }
 
+async function postClasses(req, res, username) {
+  console.log(username);
+  const classes = [
+    {
+      nombre: "Matematicas",
+    },
+    {
+      nombre: "Historia",
+    },
+    {
+      nombre: "Civica y Etica",
+    },
+    {
+      nombre: "Español",
+    },
+  ];
+  try {
+    const student = await User.Student.updateOne(
+      { username: username },
+      { classes: classes }
+    ).catch((err) => {
+      res.json({
+        message: "An error ocurred during classes registration",
+      });
+    });
+  } catch (error) {
+    res.json({
+      status: 404,
+    });
+  }
+}
+
+async function getClasses(req, res, next) {
+  try {
+    const student = await User.Student.find({
+      $or: [{ username: req.params.username }],
+    });
+    const classes = student[0].classes;
+
+    if (classes.length > 0) {
+      res.json({
+        classes: classes,
+        status: 200,
+      });
+    } else {
+      res.json({
+        message: `There are no payments for username: ${username}`,
+        status: 300,
+      });
+    }
+  } catch (error) {
+    res.json({
+      message: "An error ocurred retrieving payments",
+      status: 404,
+    });
+  }
+}
+
 module.exports = {
   getStudent,
   getStudentByName,
   postPayment,
   getPayments,
+  postClasses,
+  getClasses,
 };

@@ -14,6 +14,7 @@ const studentSchema = new mongoose.Schema(
     semester: Number,
     role: String,
     group: Number,
+    classes: Array,
   },
   { timestamps: true }
 );

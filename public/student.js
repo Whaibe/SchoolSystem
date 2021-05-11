@@ -1,6 +1,7 @@
 const infoBanner = document.getElementsByClassName("infoHolder");
 
 getInfo();
+getClasses();
 
 async function getInfo(group, tbl1, tbl2) {
   const username = sessionStorage.getItem("username");
@@ -12,20 +13,10 @@ async function getInfo(group, tbl1, tbl2) {
     console.log(student);
 
     if (student.students.length > 0) {
-      var studentData;
       infoBanner[0].textContent = student.students[0].name;
       infoBanner[1].textContent = student.students[0].lastname;
       infoBanner[2].textContent = student.students[0].group;
       infoBanner[3].textContent = student.students[0].semester;
-      for (let i = 0; i < students.students.length; i++) {
-        studentData = {
-          Name: students.students[i].name,
-          LastName: students.students[i].lastname,
-          Major: students.students[i].major,
-          Id: students.students[i].username,
-        };
-        arr1.push(studentData);
-      }
     } else {
       Swal.fire({
         title: "Information!",
@@ -34,13 +25,6 @@ async function getInfo(group, tbl1, tbl2) {
         confirmButtonText: "Ok",
       });
     }
-
-    tbl1 = buildHtmlTable(arr1);
-    group[0].appendChild(tbl1);
-    tbl1.className = "table";
-    tbl2 = buildHtmlTable(arr2);
-    group[1].appendChild(tbl2);
-    tbl2.className = "table2";
   } catch (error) {
     console.log(error);
     Swal.fire({
@@ -49,5 +33,24 @@ async function getInfo(group, tbl1, tbl2) {
       icon: "error",
       confirmButtonText: "Ok",
     });
+  }
+}
+
+async function getClasses() {
+  const username = sessionStorage.getItem("username");
+  const data = await fetch(route + "/api/student/getClasses/" + username);
+  const jsonData = await data.json();
+  console.log(jsonData.classes);
+  const grid = document.getElementsByClassName("basic-grid");
+  for (let i = 0; i < jsonData.classes.length; i++) {
+    var container = document.createElement("div");
+    container.className = "container";
+    var name = document.createElement("tag");
+    name.id = "className";
+    name.style.fontSize = "x-large";
+
+    name.textContent = jsonData.classes[i].nombre;
+    container.appendChild(name);
+    grid[0].appendChild(container);
   }
 }

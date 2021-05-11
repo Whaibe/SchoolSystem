@@ -43,6 +43,8 @@ async function registerStudent(req, res, next) {
       .save()
       .then((student) => {
         studentController.postPayment(req, res, username);
+        studentController.postClasses(req, res, username);
+        //Al registrar un estudiante, dar de alta tambien las materias a las que esta registrado
         res.json({
           message: "User registered succesfully",
           username: username,
@@ -120,12 +122,6 @@ async function updateStudent(req, res) {
     );
 
     console.log(req.body.students[0].Id);
-    // for (let i = 0; i < req.body.students.length; i++) {
-    //   const student = await User.Student.updateOne(
-    //     { username: req.body.students[i].username },
-    //     { group: req.body.groupnumber }
-    //   );
-    // }
     res.json({
       message: "Group registered succesfully",
       status: 200,

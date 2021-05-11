@@ -3,8 +3,8 @@ body {
   justify-content: center;
   align-items: center;
   background: #242d60;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-  'Helvetica Neue', 'Ubuntu', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Helvetica Neue", "Ubuntu", sans-serif;
   height: 100vh;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -76,5 +76,25 @@ h5 {
   box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
 }
 #checkout-button:hover {
+  opacity: 0.8;
+}
+.backButton {
+  height: 36px;
+  background: #556cd6;
+  color: white;
+  width: 100%;
+  font-size: 14px;
+  border: 0;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.6;
+  border-radius: 0 0 6px 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+
+  position: relative;
+}
+
+.backButton:hover {
   opacity: 0.8;
 }

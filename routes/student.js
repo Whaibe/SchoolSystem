@@ -16,5 +16,6 @@ router.get("/information", (request, response) => {
 
 router.get("/getInfo/:username", studentController.getStudentByName);
 router.get("/getPayments/:username", studentController.getPayments);
+router.get("/getClasses/:username", studentController.getClasses);
 
 module.exports = router;
