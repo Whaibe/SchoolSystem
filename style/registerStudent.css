@@ -9,7 +9,7 @@ html {
   --text-secondary: #ececec;
   --bg-primary: #23232e;
   --bg-secondary: #141418;
-  --text-color: #b6b6b6;
+  --text-color: #0f0f0f;
 }
 
 div,
@@ -26,6 +26,9 @@ p {
   font-size: 14px;
   line-height: 22px;
   color: var(--text-color);
+}
+input {
+  color: black;
 }
 h1 {
   position: absolute;
@@ -120,7 +123,7 @@ input[type="date"]::-webkit-inner-spin-button {
 input[type="date"]::-webkit-calendar-picker-indicator {
   position: absolute;
   font-size: 20px;
-  color: #a3c2c2;
+  color: #000000;
 }
 .item i {
   right: 1%;
