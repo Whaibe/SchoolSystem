@@ -31,6 +31,7 @@ html {
   background: linear-gradient(to top, var(--bg-primary), var(--bg-secondary));
   position: relative;
   top: 5vh;
+  min-height: 20vh;
 }
 
 .container {

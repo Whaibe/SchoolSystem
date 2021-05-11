@@ -1,6 +1,9 @@
 const User = require("../models/user");
 const Payment = require("../models/payment");
 
+const groupController = require("../controllers/groupController");
+const paymentController = require("../controllers/paymentController");
+
 async function getStudent(req, res, next) {
   try {
     const student = await User.Student.find({ $or: [{ group: 0 }] });
@@ -164,6 +167,43 @@ async function getClasses(req, res, next) {
   }
 }
 
+async function ereaseStudent(req, res, next) {
+  const username = req.body.username;
+  try {
+    await groupController.updateGroups(req, res, username).catch((err) => {
+      console.log("Error al borrar grupos");
+      res.json({
+        message: "An error ocurred during group update",
+        status: 404,
+      });
+    });
+    // await User.Student.deleteOne({ username: username }).catch((err) => {
+    //   console.log("Error al borrar alumno");
+    //   res.json({
+    //     status: 404,
+    //     message: "An error ocurred during student deletion",
+    //   });
+    // });
+    // await paymentController.deletePayments(req, res, username).catch((err) => {
+    //   console.log("Error al borrar pagos");
+    //   res.json({
+    //     message: "An error ocurred during payment deletion",
+    //     status: 404,
+    //   });
+    // });
+
+    res.json({
+      status: 200,
+      message: "Student deleted succesfully",
+    });
+  } catch (error) {
+    res.json({
+      message: "An error ocurred retrieving payments",
+      status: 404,
+    });
+  }
+}
+
 module.exports = {
   getStudent,
   getStudentByName,
@@ -171,4 +211,5 @@ module.exports = {
   getPayments,
   postClasses,
   getClasses,
+  ereaseStudent,
 };

@@ -29,6 +29,10 @@ router.get("/register/group", (request, response) => {
   response.render("../views/adminGroupsAlta.ejs");
 });
 
+router.get("/erease/student", (request, response) => {
+  response.render("../views/adminEreaseStudent.ejs");
+});
+
 //Get student data
 router.get("/register/studentData", studentController.getStudent);
 
@@ -36,5 +40,7 @@ router.get("/register/studentData", studentController.getStudent);
 router.post("/register/group", registerController.registerGroup);
 //Get a list of all groups
 router.get("/register/getGroups", groupController.getGroups);
+
+router.post("/erease/student/", studentController.ereaseStudent);
 
 module.exports = router;

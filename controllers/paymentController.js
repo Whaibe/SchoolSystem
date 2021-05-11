@@ -19,4 +19,20 @@ function setItems(item) {
   items = item;
 }
 
-module.exports = { updatePayments, setItems };
+async function deletePayments(req, res, username) {
+  try {
+    await Payment.Payment.deleteMany({ username: username }).catch((err) => {
+      res.json({
+        status: 404,
+        message: "An error ocurred during student deletion",
+      });
+    });
+  } catch (error) {
+    res.json({
+      message: "An error ocurred during student deletion",
+      status: 404,
+    });
+  }
+}
+
+module.exports = { updatePayments, setItems, deletePayments };

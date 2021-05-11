@@ -1,0 +1,53 @@
+html {
+  height: 100%;
+}
+
+:root {
+  font-size: 16px;
+  font-family: "Open Sans";
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+}
+
+.bdy {
+  /* Remember to use the other versions for IE 10 and older browsers! */
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  font-family: "lato", sans-serif;
+  color: black;
+  background: linear-gradient(to top, var(--bg-primary), var(--bg-secondary));
+}
+
+.container {
+  background: rgba(58, 63, 68, 0.5);
+  border-radius: 5px;
+  box-shadow: 0 1.5px 0 0 rgba(0, 0, 0, 0.1);
+  min-width: 13rem;
+  min-height: 5rem;
+  display: flex;
+  flex-direction: column;
+  color: #eee;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.container:hover {
+  background: #5e6d6d;
+}
+
+.day {
+  padding: 5px;
+  font-size: 20px;
+  font-style: italic;
+}
+.backgroundPanel {
+  height: inherit;
+  padding: 10px;
+  background: linear-gradient(to top, var(--bg-primary), var(--bg-secondary));
+  position: relative;
+  top: 5vh;
+}
