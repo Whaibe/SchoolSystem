@@ -94,6 +94,9 @@ async function sendGroups() {
         icon: "success",
         confirmButtonText: "Ok",
       });
+      setTimeout(function () {
+        window.location.reload();
+      }, 3000);
     } else if (text.status == 404) {
       Swal.fire({
         title: "Error!",
