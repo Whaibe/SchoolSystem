@@ -23,6 +23,14 @@ function goSchedule() {
 function goErease() {
   window.location.replace(route + "/api/admin/erease/student");
 }
+
+function goTeacherGroups() {
+  window.location.replace(route + "/api/teacher/groups");
+}
+
+function goTeacherSchedule() {
+  window.location.replace(route + "/api/teacher/schedule");
+}
 function redirect() {
   window.location.replace(route + "/api/student/payments");
 }

@@ -4,6 +4,7 @@ const groupSchema = new mongoose.Schema(
   {
     groupnumber: Number,
     students: Array,
+    teacherUsername: String,
   },
   { timestamps: true }
 );

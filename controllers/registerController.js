@@ -60,7 +60,7 @@ async function registerStudent(req, res, next) {
 }
 
 const registerAdmin = (req, res, next) => {
-  bcrypt.hash(randomPassword, 10, (err, hashedPass) => {
+  bcrypt.hash(req.body.password, 10, (err, hashedPass) => {
     if (err) {
       res.json({
         error: err,
@@ -88,12 +88,45 @@ const registerAdmin = (req, res, next) => {
   });
 };
 
+const registerTeacher = (req, res, next) => {
+  bcrypt.hash(req.body.password, 10, (err, hashedPass) => {
+    if (err) {
+      res.json({
+        error: err,
+      });
+    }
+    const teacher = new User.Teacher({
+      name: req.body.name,
+      username: req.body.username,
+      password: hashedPass,
+      role: "teacher",
+    });
+
+    teacher
+      .save()
+      .then((teacher) => {
+        res.json({
+          message: "Teacher registered succesfully",
+        });
+      })
+      .catch((err) => {
+        res.json({
+          message: "An error ocurred during registration",
+        });
+      });
+  });
+};
+
 async function registerGroup(req, res, next) {
   try {
     validateGroup(req.body);
+
+    const teachers = await User.Teacher.find({});
+    var random = Math.floor(Math.random() * (await teachers).length);
     const group = new Group.Group({
       groupnumber: req.body.groupnumber,
       students: req.body.students,
+      teacherUsername: teachers[random].username,
     });
 
     group
@@ -138,6 +171,7 @@ function validateGroup(group) {
   const groupSchema = Joi.object({
     groupnumber: Joi.number().required(),
     students: Joi.array().required(),
+    teacherUsername: Joi.string(),
   });
 
   return Joi.attempt(
@@ -151,4 +185,5 @@ module.exports = {
   registerStudent,
   registerAdmin,
   registerGroup,
+  registerTeacher,
 };

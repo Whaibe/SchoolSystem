@@ -6,6 +6,7 @@ const registerRouter = require("./routes/register");
 const adminRouter = require("./routes/admin");
 const studentRouter = require("./routes/student");
 const paymentRouter = require("./routes/paymentService");
+const teacherRouter = require("./routes/teacher");
 const paymentController = require("./controllers/paymentController");
 const stripe = require("stripe")(
   "sk_test_51IpRGeErZiQYNN7iqOTsDAO15INLxcl8HnfhbuvoRhuU2nIKIBKVAmOInq6GQUiFnvt9r6O3ixvozEoch5TnM38o00av78NToI"
@@ -39,6 +40,7 @@ app.use("/api/register", registerRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/student", studentRouter);
 app.use("/api/payment", paymentRouter);
+app.use("/api/teacher", teacherRouter);
 
 //Open db connection
 const db = mongoose.connection;

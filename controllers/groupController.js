@@ -21,8 +21,8 @@ async function updateGroups(req, res, username) {
   try {
     const student = await User.Student.find({ username: username });
     const number = student[0].group;
-    await Group.Group.updateOne(
-      {},
+    await Group.Group.updateMany(
+      { groupnumber: number },
       { $pull: { students: { Id: username } } },
       { safe: true, multi: true }
     ).exec();

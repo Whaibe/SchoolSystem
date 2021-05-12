@@ -26,10 +26,19 @@ const adminSchema = new mongoose.Schema({
   role: String,
 });
 
+const teacherSchema = new mongoose.Schema({
+  name: String,
+  username: String,
+  password: String,
+  role: String,
+});
+
 const Admin = mongoose.model("Admin", adminSchema);
 const Student = mongoose.model("Student", studentSchema);
+const Teacher = mongoose.model("Teacher", teacherSchema);
 
 module.exports = {
   Student,
   Admin,
+  Teacher,
 };

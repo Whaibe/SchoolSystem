@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/style/main.css" />
+    <link rel="stylesheet" href="/style/groups.css" />
+
+    <title>Groups</title>
+  </head>
+  <%-include("navbarTeacher.ejs")%>
+
+  <body id="bdy">
+    <main>
+      <div class="backgroundPanel">
+        <div class="basic-grid">
+          <div class="container">
+            <tag class="day">Monday</tag>
+            <tag>Historia</tag>
+            <tag>Español</tag>
+            <tag>Matematicas</tag>
+          </div>
+          <div class="container">
+            <tag class="day">Thuesday</tag>
+            <tag>Matematicas</tag>
+            <tag>Español</tag>
+          </div>
+          <div class="container">
+            <tag class="day">Wednesday</tag>
+            <tag>Historia</tag>
+            <tag>Civica y etica</tag>
+          </div>
+          <div class="container">
+            <tag class="day">Thursday</tag>
+            <tag>Historia</tag>
+            <tag>Matematicas</tag>
+          </div>
+          <div class="container">
+            <tag class="day">Friday</tag>
+            <tag>Civica y etica</tag>
+            <tag>Matematicas</tag>
+          </div>
+          <div class="container">
+            <tag class="day">Saturday</tag>
+          </div>
+          <div class="container">
+            <tag class="day">Sunday</tag>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script defer src="/public/routes.js"></script>
+  </body>
+</html>
