@@ -44,9 +44,9 @@ async function registerStudent(req, res, next) {
       .then((student) => {
         studentController.postPayment(req, res, username);
         studentController.postClasses(req, res, username);
-        //Al registrar un estudiante, dar de alta tambien las materias a las que esta registrado
         res.json({
           message: "User registered succesfully",
+          status: 200,
           username: username,
           password: req.body.password,
         });
@@ -54,6 +54,7 @@ async function registerStudent(req, res, next) {
       .catch((err) => {
         res.json({
           message: "An error ocurred during registration",
+          status: 404,
         });
       });
   });

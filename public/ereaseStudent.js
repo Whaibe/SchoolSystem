@@ -12,4 +12,6 @@ async function ereaseStudent() {
     },
     body: JSON.stringify(data),
   });
+  const jsonData = await request.json();
+  console.log(jsonData);
 }

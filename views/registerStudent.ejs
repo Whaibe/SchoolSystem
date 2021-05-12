@@ -14,6 +14,10 @@
       integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
       crossorigin="anonymous"
     />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+
     <link rel="stylesheet" href="/style/main.css" />
     <link rel="stylesheet" href="/style/registerStudent.css" />
 
@@ -43,8 +47,8 @@
               <input id="lastname" type="text" name="lastname" required />
             </div>
             <div class="item">
-              <label for="address">Major<span>*</span></label>
-              <input id="address" type="text" name="major" required />
+              <label for="major">Major<span>*</span></label>
+              <input id="major" type="text" name="major" required />
             </div>
             <div class="item">
               <label for="curp">CURP<span>*</span></label>
@@ -68,12 +72,12 @@
             </div>
           </div>
           <div class="btn-block">
-            <button type="submit" href="/">Submit</button>
+            <button type="button" onclick="postStudents()">Submit</button>
           </div>
         </form>
       </div>
     </main>
     <script defer src="/public/routes.js"></script>
-
+    <script defer src="/public/registerStudent.js"></script>
   </body>
 </html>
