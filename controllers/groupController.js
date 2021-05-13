@@ -16,21 +16,22 @@ async function getGroups(req, res, next) {
 }
 
 async function updateGroups(req, res, username) {
-  console.log("vava" + username);
-  const instruction = {
-    $pull: {
-      students: {
-        id: username,
-      },
-    },
-  };
   try {
     const student = await User.Student.find({ username: username });
-    await console.log(student);
-
     const number = student[0].group;
-    await Group.Group.updateMany({}, instruction);
+
+    const group = await Group.Group.find({ groupnumber: number });
+
+    for (let i = 0; i < group[0].students.length; i++) {
+      if (group[0].students[i].Id == username) {
+        var item = group[0].students.splice(i, 1);
+        console.log(item);
+        console.log(group[0].students);
+      }
+    }
+    await group[0].save();
   } catch (error) {
+    console.log(error);
     res.json({
       message: "An error ocurred during student deletion",
       status: 404,
