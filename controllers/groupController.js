@@ -17,12 +17,19 @@ async function getGroups(req, res, next) {
 
 async function updateGroups(req, res, username) {
   console.log("vava" + username);
+  const instruction = {
+    $pull: {
+      students: {
+        id: username,
+      },
+    },
+  };
   try {
     const student = await User.Student.find({ username: username });
     await console.log(student);
 
     const number = student[0].group;
-    await Group.Group.updateMany({}, { $pull: { students: { Id: username } } });
+    await Group.Group.updateMany({}, instruction);
   } catch (error) {
     res.json({
       message: "An error ocurred during student deletion",

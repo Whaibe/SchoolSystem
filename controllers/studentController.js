@@ -177,20 +177,20 @@ async function ereaseStudent(req, res, next) {
         status: 404,
       });
     });
-    // await User.Student.deleteOne({ username: username }).catch((err) => {
-    //   console.log("Error al borrar alumno");
-    //   res.json({
-    //     status: 404,
-    //     message: "An error ocurred during student deletion",
-    //   });
-    // });
-    // await paymentController.deletePayments(req, res, username).catch((err) => {
-    //   console.log("Error al borrar pagos");
-    //   res.json({
-    //     message: "An error ocurred during payment deletion",
-    //     status: 404,
-    //   });
-    // });
+    await User.Student.deleteOne({ username: username }).catch((err) => {
+      console.log("Error al borrar alumno");
+      res.json({
+        status: 404,
+        message: "An error ocurred during student deletion",
+      });
+    });
+    await paymentController.deletePayments(req, res, username).catch((err) => {
+      console.log("Error al borrar pagos");
+      res.json({
+        message: "An error ocurred during payment deletion",
+        status: 404,
+      });
+    });
 
     res.json({
       status: 200,
