@@ -16,7 +16,7 @@ const mongoose = require("mongoose");
 const Joi = require("joi"); //Imports Joi package
 
 mongoose.connect(
-  "mongodb+srv://Va:whaibe@main.ua2da.mongodb.net/SchoolDB?retryWrites=true&w=majority",
+  "",
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
