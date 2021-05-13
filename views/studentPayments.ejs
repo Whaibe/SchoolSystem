@@ -45,9 +45,8 @@
   </body>
   <script type="text/javascript">
     // Create an instance of the Stripe object with your publishable API key
-    var stripe = Stripe(
-      ""
-    );
+    //Add public key in order to use stripe
+    var stripe = Stripe("");
     var checkoutButton = document.getElementById("checkout-button");
     const selectedEl = document.getElementsByClassName("selected");
     var data = [];

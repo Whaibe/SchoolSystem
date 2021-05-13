@@ -8,17 +8,12 @@ const studentRouter = require("./routes/student");
 const paymentRouter = require("./routes/paymentService");
 const teacherRouter = require("./routes/teacher");
 const paymentController = require("./controllers/paymentController");
-const stripe = require("stripe")(
-  ""
-);
+const stripe = require("stripe")(""); //Add stripe private key
 
 const mongoose = require("mongoose");
 const Joi = require("joi"); //Imports Joi package
-
-mongoose.connect(
-  "",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
+//add conection string in order to connect to database
+mongoose.connect("", { useNewUrlParser: true, useUnifiedTopology: true });
 
 //initialize package
 const app = express();
