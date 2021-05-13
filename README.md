@@ -10,7 +10,7 @@ In order to use this system you need the following:
 1. Clone the github repository to your local system.
 2. Install project dependencies by running:
    ``````
-   npm Install
+   npm install
     ``````
 3. In order to use all capabilities of the system please add your mongodb connection string into index.js file.
 4. Then, to use Stripe web service please add public and private API keys into Index.js and studentPayments.ejs files.
