@@ -9,7 +9,7 @@ const paymentRouter = require("./routes/paymentService");
 const teacherRouter = require("./routes/teacher");
 const paymentController = require("./controllers/paymentController");
 const stripe = require("stripe")(
-  "sk_test_51IpRGeErZiQYNN7iqOTsDAO15INLxcl8HnfhbuvoRhuU2nIKIBKVAmOInq6GQUiFnvt9r6O3ixvozEoch5TnM38o00av78NToI"
+  ""
 );
 
 const mongoose = require("mongoose");
